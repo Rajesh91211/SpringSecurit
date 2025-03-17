@@ -20,18 +20,15 @@ public class TaxFillingController {
 
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping
-	private String createtaxFile()
-	{
+	private String createtaxFile() {
 		return "Tax filling is regist";
 	}
-	
+
 	@ResponseStatus(HttpStatus.CREATED)
 	@GetMapping
-	@PreAuthorize("hasRole('ADMIN')") //only admin can access this method
-	public List<String> getAlltaxs()
-	{
-		List<String> all = new ArrayList<>(Arrays.asList("Raj","Ram","Rahul"));
-		return all;
+	@PreAuthorize("hasRole('ADMIN')") // only admin can access this method
+	public List<String> getAlltaxs() {
+		return new ArrayList<>(Arrays.asList("Raj", "Ram", "Rahul"));
 	}
-	
+
 }
